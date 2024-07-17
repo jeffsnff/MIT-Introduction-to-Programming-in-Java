@@ -22,20 +22,16 @@ class FooCorporation{
         
         employeeTotal = calculatepay(employeeBasepay, employeeHours);
 
-        // System.out.println("Emplyee "+employeeID+" total pay before taxes: "+employeeTotal);
+        System.out.println("Emplyee "+employeeID+" total pay before taxes: "+employeeTotal);
 
     }
 
-    public static int calculatepay(double basePay, int hoursWorked){
-        int totalPay = 0;
-        int overTime = 0;
-        int updatedHours = 0;
-        
-        if(hoursWorked > 40){
-            updatedHours = hoursWorked - overTime;
-        }
+    public static double calculatepay(double basePay, int hoursWorked){
+        double totalPay = 0.0;
+        int overTime = hoursWorked - 40;
 
-        System.out.println("Hours Worked: "+updatedHours+" OverTime "+overTime);
+        // Calculates basepay without overtime
+        totalPay = (hoursWorked - overTime) * basePay;
 
 
         return totalPay;
