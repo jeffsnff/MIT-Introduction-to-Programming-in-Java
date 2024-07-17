@@ -31,7 +31,9 @@ class FooCorporation{
         // Calculates basepay without overtime
         totalPay = (hoursWorked - overTime) * basePay;
 
-
+        // Calculates ovetime pay then adds to totalPay
+        totalPay = totalPay + ((basePay * 1.5) * overTime);
+        
         return totalPay;
     }
 }
