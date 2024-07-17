@@ -17,16 +17,25 @@ class FooCorporation{
         if(employeeBasepay < minimumWage || employeeHours > maxHours){
             System.err.println("Employee needs a minimum of $8.00 an hour and max 60 hours per pay period");
             return;
-        }else{
-            employeeTotal = calculatepay(employeeBasepay, maxHours);
         }
-        System.out.println("Emplyees total pay before taxes: "+employeeTotal);
+            
+        
+        employeeTotal = calculatepay(employeeBasepay, employeeHours);
+
+        // System.out.println("Emplyee "+employeeID+" total pay before taxes: "+employeeTotal);
 
     }
 
     public static int calculatepay(double basePay, int hoursWorked){
         int totalPay = 0;
-        int overTime = hoursWorked - 40;
+        int overTime = 0;
+        int updatedHours = 0;
+        
+        if(hoursWorked > 40){
+            updatedHours = hoursWorked - overTime;
+        }
+
+        System.out.println("Hours Worked: "+updatedHours+" OverTime "+overTime);
 
 
         return totalPay;
